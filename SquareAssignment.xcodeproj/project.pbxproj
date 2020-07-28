@@ -16,6 +16,9 @@
 		823F1B9924D0751600E2EC51 /* SquareAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F1B9824D0751600E2EC51 /* SquareAssignmentTests.swift */; };
 		823F1BA724D07E3B00E2EC51 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F1BA624D07E3B00E2EC51 /* Employee.swift */; };
 		823F1BAA24D081BB00E2EC51 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F1BA924D081BB00E2EC51 /* ApiManager.swift */; };
+		823F1BB024D08ABC00E2EC51 /* EmployeeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F1BAE24D08ABC00E2EC51 /* EmployeeTableCell.swift */; };
+		823F1BB124D08ABC00E2EC51 /* EmployeeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 823F1BAF24D08ABC00E2EC51 /* EmployeeTableCell.xib */; };
+		823F1BB324D08E1700E2EC51 /* EmployeeModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F1BB224D08E1700E2EC51 /* EmployeeModelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,9 @@
 		823F1B9A24D0751600E2EC51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		823F1BA624D07E3B00E2EC51 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		823F1BA924D081BB00E2EC51 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		823F1BAE24D08ABC00E2EC51 /* EmployeeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableCell.swift; sourceTree = "<group>"; };
+		823F1BAF24D08ABC00E2EC51 /* EmployeeTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeTableCell.xib; sourceTree = "<group>"; };
+		823F1BB224D08E1700E2EC51 /* EmployeeModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeModelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,7 @@
 		823F1BA424D07E0C00E2EC51 /* ModelView */ = {
 			isa = PBXGroup;
 			children = (
+				823F1BB224D08E1700E2EC51 /* EmployeeModelView.swift */,
 			);
 			path = ModelView;
 			sourceTree = "<group>";
@@ -124,6 +131,7 @@
 		823F1BA524D07E1400E2EC51 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				823F1BAB24D08A4000E2EC51 /* tableCell */,
 				823F1B8524D0750F00E2EC51 /* ViewController.swift */,
 			);
 			path = View;
@@ -135,6 +143,15 @@
 				823F1BA924D081BB00E2EC51 /* ApiManager.swift */,
 			);
 			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		823F1BAB24D08A4000E2EC51 /* tableCell */ = {
+			isa = PBXGroup;
+			children = (
+				823F1BAE24D08ABC00E2EC51 /* EmployeeTableCell.swift */,
+				823F1BAF24D08ABC00E2EC51 /* EmployeeTableCell.xib */,
+			);
+			path = tableCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +237,7 @@
 			files = (
 				823F1B8E24D0751500E2EC51 /* LaunchScreen.storyboard in Resources */,
 				823F1B8B24D0751500E2EC51 /* Assets.xcassets in Resources */,
+				823F1BB124D08ABC00E2EC51 /* EmployeeTableCell.xib in Resources */,
 				823F1B8924D0750F00E2EC51 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,7 +258,9 @@
 			files = (
 				823F1B8624D0750F00E2EC51 /* ViewController.swift in Sources */,
 				823F1BA724D07E3B00E2EC51 /* Employee.swift in Sources */,
+				823F1BB024D08ABC00E2EC51 /* EmployeeTableCell.swift in Sources */,
 				823F1BAA24D081BB00E2EC51 /* ApiManager.swift in Sources */,
+				823F1BB324D08E1700E2EC51 /* EmployeeModelView.swift in Sources */,
 				823F1B8224D0750F00E2EC51 /* AppDelegate.swift in Sources */,
 				823F1B8424D0750F00E2EC51 /* SceneDelegate.swift in Sources */,
 			);
