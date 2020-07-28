@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "39455CE6-E6E3-4AA1-90E6-C8855BAB2D06"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FEE87DE7-55FE-4692-A42F-06ECB8055224"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SquareAssignment/View/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "FEE87DE7-55FE-4692-A42F-06ECB8055224 - f27b84c616cb3a90"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SquareAssignment.ViewController.__deallocating_deinit"
+                  moduleName = "SquareAssignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hdurodola/Documents/random/iOS%20Apps/SquareAssignment/SquareAssignment/View/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "FEE87DE7-55FE-4692-A42F-06ECB8055224 - 4ef05cb3c28ed0bc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SquareAssignment.ViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; SquareAssignment.ViewController"
+                  moduleName = "SquareAssignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hdurodola/Documents/random/iOS%20Apps/SquareAssignment/SquareAssignment/View/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "FEE87DE7-55FE-4692-A42F-06ECB8055224 - b366bccf68cc23ef"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SquareAssignment.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; SquareAssignment.ViewController"
+                  moduleName = "SquareAssignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hdurodola/Documents/random/iOS%20Apps/SquareAssignment/SquareAssignment/View/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "384">
+               </Location>
+               <Location
+                  uuid = "FEE87DE7-55FE-4692-A42F-06ECB8055224 - 1dfa7425335812f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SquareAssignment.ViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;SquareAssignment.ViewController&gt;"
+                  moduleName = "SquareAssignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hdurodola/Documents/random/iOS%20Apps/SquareAssignment/SquareAssignment/View/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "FEE87DE7-55FE-4692-A42F-06ECB8055224 - 1e7044bf1d0be7e0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SquareAssignment.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;SquareAssignment.ViewController&gt;"
+                  moduleName = "SquareAssignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hdurodola/Documents/random/iOS%20Apps/SquareAssignment/SquareAssignment/View/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "248">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

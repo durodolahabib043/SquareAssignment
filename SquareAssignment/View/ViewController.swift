@@ -8,11 +8,16 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
+      private var employee: [EmployeeElement]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        ApiManager().fetchFilms { employee in
+            print("this is successdully \(employee[0].fullName)")
+        }
     }
 
 
