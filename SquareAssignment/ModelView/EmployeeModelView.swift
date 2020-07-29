@@ -11,14 +11,15 @@ import Foundation
 class EmployeeModelView {
 
     let name , emailAddress ,  team : String
-    let bio , phone: String?
+    let bio , phone ,photo: String?
 
-    init(name : String , emailAddress: String , phone : String? , team : String , bio : String? ) {
+    init(name : String , emailAddress: String , phone : String? , team : String , bio : String? , photo: String? ) {
         self.name = name
         self.emailAddress = emailAddress
         self.phone = phone
         self.team = team
         self.bio = bio
+        self.photo = photo
     }
 
 }

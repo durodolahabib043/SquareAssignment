@@ -27,11 +27,17 @@ class EmployeeTableCell: UITableViewCell {
         employeeEmailAddress.text = "Email Address :\(model.emailAddress)"
         employeeTeam.text = "Teams: \(model.team)"
         guard let bio = model.bio ,
-            let phone = model.phone else {
+            let phone = model.phone,
+            let photo = model.photo,
+            let url = URL(string: photo)
+            else {
                 return
         }
         employeeType.text = "Bio: \(bio)"
         employeePhoneNumber.text = "Phone Number : \(phone)"
+        employeeImageView.imageURLLoad(url: url)
     }
-    
+
 }
+
+

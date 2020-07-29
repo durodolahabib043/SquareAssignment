@@ -52,7 +52,7 @@ extension ViewController :  UITableViewDelegate , UITableViewDataSource{
         
         let employeeIndex = self.employee[indexPath.row]
         
-        let model = EmployeeModelView(name: employeeIndex.fullName, emailAddress: employeeIndex.emailAddress, phone: employeeIndex.phoneNumber, team: employeeIndex.team, bio: employeeIndex.biography)
+        let model = EmployeeModelView(name: employeeIndex.fullName, emailAddress: employeeIndex.emailAddress, phone: employeeIndex.phoneNumber, team: employeeIndex.team, bio: employeeIndex.biography ,photo: employeeIndex.photoURLLarge)
         
         cell.displayName(model: model)
         cell.selectionStyle = .none
