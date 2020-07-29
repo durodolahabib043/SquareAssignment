@@ -30,8 +30,15 @@ class ViewController: UIViewController  {
     }
     
     func loadEmployeeApi()  {
-        ApiManager().fetchFilms { employee in
-            self.employee = employee ;
+        ApiManager().fetchFilms { employee,err  in
+            
+            if let employees = employee {
+                self.employee = employees
+            }
+            
+            if !err.isEmpty {
+                print("this is an  error: " + err)
+            }
             DispatchQueue.main.async {
                 self.tablewView.reloadData()
             }
@@ -42,18 +49,24 @@ class ViewController: UIViewController  {
 
 extension ViewController :  UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+        if self.employee.count == 0 {
+        tableView.setEmptyView(title: "Oopps", message: "No employee contact information available")
+
+        }
         return self.employee.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! EmployeeTableCell
-        
-        let employeeIndex = self.employee[indexPath.row]
-        
-        let  model = EmployeeModelView(name: employeeIndex.fullName, emailAddress: employeeIndex.emailAddress, phone: employeeIndex.phoneNumber, team: employeeIndex.team, bio: employeeIndex.biography ,photo: employeeIndex.photoURLLarge)
-        cell.displayName(model: model)
-        cell.selectionStyle = .none
-        return cell
+
+            let employeeIndex = self.employee[indexPath.row]
+            
+            let  model = EmployeeModelView(name: employeeIndex.fullName, emailAddress: employeeIndex.emailAddress, phone: employeeIndex.phoneNumber, team: employeeIndex.team, bio: employeeIndex.biography ,photo: employeeIndex.photoURLLarge)
+            cell.displayName(model: model)
+            cell.selectionStyle = .none
+            return cell
+
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

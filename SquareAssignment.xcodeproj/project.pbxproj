@@ -20,6 +20,7 @@
 		823F1BB124D08ABC00E2EC51 /* EmployeeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 823F1BAF24D08ABC00E2EC51 /* EmployeeTableCell.xib */; };
 		823F1BB324D08E1700E2EC51 /* EmployeeModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F1BB224D08E1700E2EC51 /* EmployeeModelView.swift */; };
 		823F1BB524D1B72A00E2EC51 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F1BB424D1B72900E2EC51 /* CustomImageView.swift */; };
+		823F1BB724D205EA00E2EC51 /* EmptyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F1BB624D205E900E2EC51 /* EmptyTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		823F1BAF24D08ABC00E2EC51 /* EmployeeTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeTableCell.xib; sourceTree = "<group>"; };
 		823F1BB224D08E1700E2EC51 /* EmployeeModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeModelView.swift; sourceTree = "<group>"; };
 		823F1BB424D1B72900E2EC51 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		823F1BB624D205E900E2EC51 /* EmptyTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			children = (
 				823F1BAE24D08ABC00E2EC51 /* EmployeeTableCell.swift */,
 				823F1BAF24D08ABC00E2EC51 /* EmployeeTableCell.xib */,
+				823F1BB624D205E900E2EC51 /* EmptyTableView.swift */,
 			);
 			path = tableCell;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				823F1B8624D0750F00E2EC51 /* ViewController.swift in Sources */,
+				823F1BB724D205EA00E2EC51 /* EmptyTableView.swift in Sources */,
 				823F1BB524D1B72A00E2EC51 /* CustomImageView.swift in Sources */,
 				823F1BA724D07E3B00E2EC51 /* Employee.swift in Sources */,
 				823F1BB024D08ABC00E2EC51 /* EmployeeTableCell.swift in Sources */,

@@ -10,29 +10,37 @@ import Foundation
 
 class ApiManager {
 
-    var films: [Employee] = []
-    private let domainUrlString = "https://s3.amazonaws.com/sq-mobile-interview/"
+    private let baseUrl = "https://s3.amazonaws.com/sq-mobile-interview/"
+    var errorMessage = ""
+    //typealias employeeResult = ([EmployeeElement]? , _ error: String)) -> Void
 
-    func fetchFilms(completionHandler: @escaping ([EmployeeElement]) -> Void) {
-        let url = URL(string: domainUrlString + "employees.json")!
-
+    func fetchFilms(completionHandler: @escaping ([EmployeeElement]? , _ error: String) -> Void) {
+        let url = URL(string: baseUrl + "employees.json")!
+        var employeeElement: [EmployeeElement]?
         let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
             if let error = error {
+                self.errorMessage += "DataTask error: " + error.localizedDescription + "\n"
                 print("Error with fetching films: \(error)")
-                return
-            }
-            
-            guard let httpResponse = response as? HTTPURLResponse,
-                (200...299).contains(httpResponse.statusCode) else {
-                    print("Error from Api manager")
-                    return
-            }
+            } else if
+                let data = data,
+                let response = response as? HTTPURLResponse,
+                response.statusCode == 200{
+                if let allEmployee = try? JSONDecoder().decode(Employee.self, from: data){
+                    employeeElement = allEmployee.employees
+                }
+                else {
+                    employeeElement = [];
+                    print(self.errorMessage)
+                }
 
-            if let data = data,
-                let allEmployee = try? JSONDecoder().decode(Employee.self, from: data) {
-                completionHandler(allEmployee.employees )
+            }
+            else if
+                let response = response as? HTTPURLResponse,
+                (400...500).contains(response.statusCode) {
+                employeeElement = [];
 
             }
+            completionHandler(employeeElement! , self.errorMessage)
         })
         task.resume()
     }
