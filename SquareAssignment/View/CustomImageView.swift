@@ -22,6 +22,7 @@ extension UIImageView {
                 }
             }
             let urlToString = url.absoluteString as NSString
+            setImage(image: UIImage(named: "employeeAvatar"))
             if let cachedImage = imageCache.object(forKey: urlToString) {
                 setImage(image: cachedImage)
             } else if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {

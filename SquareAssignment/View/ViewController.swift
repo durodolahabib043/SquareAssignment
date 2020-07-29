@@ -11,7 +11,6 @@ import UIKit
 
 class ViewController: UIViewController  {
     private var employee: [EmployeeElement] = []
-    
     @IBOutlet weak var tablewView: UITableView!
     //indentifer
     let cellIdentifier = "cellIdentifier"
@@ -37,7 +36,6 @@ class ViewController: UIViewController  {
                 self.tablewView.reloadData()
             }
         }
-        
     }
     
 }
@@ -52,8 +50,7 @@ extension ViewController :  UITableViewDelegate , UITableViewDataSource{
         
         let employeeIndex = self.employee[indexPath.row]
         
-        let model = EmployeeModelView(name: employeeIndex.fullName, emailAddress: employeeIndex.emailAddress, phone: employeeIndex.phoneNumber, team: employeeIndex.team, bio: employeeIndex.biography ,photo: employeeIndex.photoURLLarge)
-        
+        let  model = EmployeeModelView(name: employeeIndex.fullName, emailAddress: employeeIndex.emailAddress, phone: employeeIndex.phoneNumber, team: employeeIndex.team, bio: employeeIndex.biography ,photo: employeeIndex.photoURLLarge)
         cell.displayName(model: model)
         cell.selectionStyle = .none
         return cell
@@ -62,7 +59,5 @@ extension ViewController :  UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 300
     }
-    
-    
 }
 
