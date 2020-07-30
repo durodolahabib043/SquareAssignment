@@ -14,8 +14,8 @@ class ApiManager {
     var errorMessage = ""
     //typealias employeeResult = ([EmployeeElement]? , _ error: String)) -> Void
 
-    func fetchFilms(completionHandler: @escaping ([EmployeeElement]? , _ error: String) -> Void) {
-        let url = URL(string: baseUrl + "employees.json")!
+    func fetchFilms(inputJson:String , completionHandler: @escaping ([EmployeeElement]? , _ error: String) -> Void) {
+        let url = URL(string: baseUrl + inputJson)!
         var employeeElement: [EmployeeElement]?
         let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
             if let error = error {

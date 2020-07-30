@@ -17,26 +17,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ley-7P-7Oo">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="283" width="414" height="579"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XSg-p7-nns">
+                                <rect key="frame" x="0.0" y="59" width="414" height="216"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="ley-7P-7Oo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GI0-0u-qss"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ley-7P-7Oo" secondAttribute="trailing" id="Mbr-wF-8YP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XSg-p7-nns" secondAttribute="trailing" id="Y2F-yn-Bs5"/>
+                            <constraint firstItem="XSg-p7-nns" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="a5f-Oi-O3I"/>
                             <constraint firstItem="ley-7P-7Oo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bhb-3x-fFn"/>
+                            <constraint firstItem="XSg-p7-nns" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fjv-Q6-yg2"/>
+                            <constraint firstItem="ley-7P-7Oo" firstAttribute="top" secondItem="XSg-p7-nns" secondAttribute="bottom" constant="8" id="gld-Th-GDg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ley-7P-7Oo" secondAttribute="bottom" id="zH6-8N-pel"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="employeeTypePicker" destination="XSg-p7-nns" id="yYk-Mr-eJb"/>
                         <outlet property="tablewView" destination="ley-7P-7Oo" id="SVD-Hu-xoO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="89"/>
+            <point key="canvasLocation" x="137.68115942028987" y="88.392857142857139"/>
         </scene>
     </scenes>
 </document>

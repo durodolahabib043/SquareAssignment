@@ -10,48 +10,84 @@ import UIKit
 
 
 class ViewController: UIViewController  {
-    private var employee: [EmployeeElement] = []
+
     @IBOutlet weak var tablewView: UITableView!
-    //indentifer
+    @IBOutlet weak var employeeTypePicker: UIPickerView!
+
+    // Variables
+    let tableheight:CGFloat = 300
+    private var employee: [EmployeeElement] = []
     let cellIdentifier = "cellIdentifier"
     let cellUIB = "EmployeeTableCell"
+    var pickerData: [String] = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        loadEmployeeApi()
+        setupEmployeePicker()
+        loadEmployeeApi(input: "employees.json")
     }
     
-    func setupTableView(){
+    func setupTableView(){ ///set up tableview
         tablewView.delegate = self
         tablewView.dataSource = self
         tablewView.register(UINib(nibName: cellUIB, bundle: nil), forCellReuseIdentifier: cellIdentifier)
-        
+    }
+
+    func setupEmployeePicker(){ /// set up picker
+        employeeTypePicker.delegate = self
+        employeeTypePicker.dataSource = self
+        pickerData = ["employees.json", "employees_malformed.json", "employees_empty.json"]
     }
     
-    func loadEmployeeApi()  {
-        ApiManager().fetchFilms { employee,err  in
-            
+    func loadEmployeeApi(input : String)  { ///call employee api
+        ApiManager().fetchFilms(inputJson: input) {
+            employee,err  in
+
             if let employees = employee {
                 self.employee = employees
             }
-            
+
             if !err.isEmpty {
                 print("this is an  error: " + err)
             }
             DispatchQueue.main.async {
                 self.tablewView.reloadData()
             }
+
         }
     }
     
 }
 
-extension ViewController :  UITableViewDelegate , UITableViewDataSource{
+extension ViewController :  UITableViewDelegate , UITableViewDataSource , UIPickerViewDelegate, UIPickerViewDataSource{
+
+    // MARK: - pickerView delegate
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        pickerData.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        pickerData[row]
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print(pickerData[row])
+
+        loadEmployeeApi(input: pickerData[row])
+    }
+
+
+
+    // MARK: - tableview delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
         if self.employee.count == 0 {
-        tableView.setEmptyView(title: "Oopps", message: "No employee contact information available")
+            tableView.setEmptyView(title: "Oopps", message: "No employee contact information available")
 
         }
         return self.employee.count
@@ -60,17 +96,17 @@ extension ViewController :  UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! EmployeeTableCell
 
-            let employeeIndex = self.employee[indexPath.row]
-            
-            let  model = EmployeeModelView(name: employeeIndex.fullName, emailAddress: employeeIndex.emailAddress, phone: employeeIndex.phoneNumber, team: employeeIndex.team, bio: employeeIndex.biography ,photo: employeeIndex.photoURLLarge)
-            cell.displayName(model: model)
-            cell.selectionStyle = .none
-            return cell
+        let employeeIndex = self.employee[indexPath.row]
+
+        let  model = EmployeeModelView(name: employeeIndex.fullName, emailAddress: employeeIndex.emailAddress, phone: employeeIndex.phoneNumber, team: employeeIndex.team, bio: employeeIndex.biography ,photo: employeeIndex.photoURLLarge)
+        cell.displayName(model: model)
+        cell.selectionStyle = .none
+        return cell
 
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
+        return tableheight
     }
 }
 
