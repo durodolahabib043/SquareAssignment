@@ -9,14 +9,12 @@
 import Foundation
 
 class ApiManager {
-
-    private let baseUrl = "https://s3.amazonaws.com/sq-mobile-interview/"
     var errorMessage = ""
     //typealias employeeResult = ([EmployeeElement]? , _ error: String)) -> Void
 
-    func fetchFilms(inputJson:String , completionHandler: @escaping ([EmployeeElement]? , _ error: String) -> Void) {
-        let url = URL(string: baseUrl + inputJson)!
-        var employeeElement: [EmployeeElement]?
+    func fetchFilms(inputJson:String , completionHandler: @escaping ([EmployeeElement] , _ error: String) -> Void) {
+        let url = URL(string: Constants.BASE_URL + inputJson)!
+        var employeeElement: [EmployeeElement] = []
         let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
             if let error = error {
                 self.errorMessage += "DataTask error: " + error.localizedDescription + "\n"
@@ -25,14 +23,13 @@ class ApiManager {
                 let data = data,
                 let response = response as? HTTPURLResponse,
                 response.statusCode == 200{
-                if let allEmployee = try? JSONDecoder().decode(Employee.self, from: data){
+                do {
+                    let allEmployee = try JSONDecoder().decode(Employee.self, from: data)
                     employeeElement = allEmployee.employees
-                }
-                else {
-                    employeeElement = [];
-                    print(self.errorMessage)
-                }
 
+                 } catch {
+                       self.errorMessage = "error"
+                 }
             }
             else if
                 let response = response as? HTTPURLResponse,
@@ -40,7 +37,7 @@ class ApiManager {
                 employeeElement = [];
 
             }
-            completionHandler(employeeElement! , self.errorMessage)
+            completionHandler(employeeElement , self.errorMessage)
         })
         task.resume()
     }

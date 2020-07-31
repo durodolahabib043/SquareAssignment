@@ -21,6 +21,7 @@
 		823F1BB324D08E1700E2EC51 /* EmployeeModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F1BB224D08E1700E2EC51 /* EmployeeModelView.swift */; };
 		823F1BB524D1B72A00E2EC51 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F1BB424D1B72900E2EC51 /* CustomImageView.swift */; };
 		823F1BB724D205EA00E2EC51 /* EmptyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F1BB624D205E900E2EC51 /* EmptyTableView.swift */; };
+		823F1BBA24D251ED00E2EC51 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F1BB924D251ED00E2EC51 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		823F1BB224D08E1700E2EC51 /* EmployeeModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeModelView.swift; sourceTree = "<group>"; };
 		823F1BB424D1B72900E2EC51 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		823F1BB624D205E900E2EC51 /* EmptyTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableView.swift; sourceTree = "<group>"; };
+		823F1BB924D251ED00E2EC51 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		823F1B8024D0750F00E2EC51 /* SquareAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				823F1BB824D251D300E2EC51 /* Helpers */,
 				823F1BA824D0818F00E2EC51 /* NetworkLayer */,
 				823F1BA524D07E1400E2EC51 /* View */,
 				823F1BA424D07E0C00E2EC51 /* ModelView */,
@@ -158,6 +161,14 @@
 				823F1BB624D205E900E2EC51 /* EmptyTableView.swift */,
 			);
 			path = tableCell;
+			sourceTree = "<group>";
+		};
+		823F1BB824D251D300E2EC51 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				823F1BB924D251ED00E2EC51 /* Constant.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +280,7 @@
 				823F1BB024D08ABC00E2EC51 /* EmployeeTableCell.swift in Sources */,
 				823F1BAA24D081BB00E2EC51 /* ApiManager.swift in Sources */,
 				823F1BB324D08E1700E2EC51 /* EmployeeModelView.swift in Sources */,
+				823F1BBA24D251ED00E2EC51 /* Constant.swift in Sources */,
 				823F1B8224D0750F00E2EC51 /* AppDelegate.swift in Sources */,
 				823F1B8424D0750F00E2EC51 /* SceneDelegate.swift in Sources */,
 			);
@@ -316,6 +328,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -376,6 +389,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

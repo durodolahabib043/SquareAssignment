@@ -17,6 +17,7 @@ class ViewController: UIViewController  {
     // Variables
     let tableheight:CGFloat = 300
     private var employee: [EmployeeElement] = []
+    var errorCheck:String?
     let cellIdentifier = "cellIdentifier"
     let cellUIB = "EmployeeTableCell"
     var pickerData: [String] = [String]()
@@ -37,19 +38,15 @@ class ViewController: UIViewController  {
     func setupEmployeePicker(){ /// set up picker
         employeeTypePicker.delegate = self
         employeeTypePicker.dataSource = self
-        pickerData = ["employees.json", "employees_malformed.json", "employees_empty.json"]
+        pickerData = [Constants.EMPLOYEES_JSON , Constants.EMPLOYEES_MALFORMED_JSON, Constants.EMPLOYEES_EMPTY_JSON]
     }
     
-    func loadEmployeeApi(input : String)  { ///call employee api
+    func loadEmployeeApi(input : String)  { /// call employee api
         ApiManager().fetchFilms(inputJson: input) {
             employee,err  in
-
-            if let employees = employee {
-                self.employee = employees
-            }
-
+            self.employee = employee
             if !err.isEmpty {
-                print("this is an  error: " + err)
+                self.errorCheck = err
             }
             DispatchQueue.main.async {
                 self.tablewView.reloadData()
@@ -86,10 +83,14 @@ extension ViewController :  UITableViewDelegate , UITableViewDataSource , UIPick
     // MARK: - tableview delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        if self.employee.count == 0 {
-            tableView.setEmptyView(title: "Oopps", message: "No employee contact information available")
-
+        if (self.errorCheck == "error") {
+            tableView.setEmptyView(title: "Oopps", message: "Malformed json \(self.errorCheck!)")
+            self.errorCheck = nil
         }
+        else {
+            tableView.setEmptyView(title: "Oopps", message: "No employee contact information available")
+        }
+
         return self.employee.count
     }
     
@@ -102,7 +103,7 @@ extension ViewController :  UITableViewDelegate , UITableViewDataSource , UIPick
         cell.displayName(model: model)
         cell.selectionStyle = .none
         return cell
-
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
