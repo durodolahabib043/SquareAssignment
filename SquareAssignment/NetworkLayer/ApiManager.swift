@@ -10,7 +10,6 @@ import Foundation
 
 class ApiManager {
     var errorMessage = ""
-    //typealias employeeResult = ([EmployeeElement]? , _ error: String)) -> Void
 
     func fetchFilms(inputJson:String , completionHandler: @escaping ([EmployeeElement] , _ error: String) -> Void) {
         let url = URL(string: Constants.BASE_URL + inputJson)!
