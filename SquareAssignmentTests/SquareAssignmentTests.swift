@@ -10,25 +10,61 @@ import XCTest
 @testable import SquareAssignment
 
 class SquareAssignmentTests: XCTestCase {
+    var employeeNNNs: [EmployeeElement] = []
+    var errorCheck:String?
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testEmployeeNotNull() { /// test to show that response can not be nill
+        let expectation = self.expectation(description: "notNill")
+        ApiManager().fetchFilms(inputJson: Constants.EMPLOYEES_JSON) {
+            employee,err  in
+            self.employeeNNNs = employee
+            XCTAssertNotNil(employee)
+            XCTAssertEqual("Justine Mason", employee[0].fullName)
+            expectation.fulfill()
         }
+        callWait()
+
+    }
+
+
+    func testEmptyEmployee() { /// test to show the employee count is 0
+        let expectation = self.expectation(description: "Empty")
+
+        ApiManager().fetchFilms(inputJson: Constants.EMPLOYEES_EMPTY_JSON) {
+            employee,err  in
+
+            XCTAssertEqual(0, employee.count)
+
+            expectation.fulfill()
+
+        }
+        callWait()
+
+    }
+
+    func testMalformedEmployee() {///test to show malformed json returns error
+        let expectation = self.expectation(description: "Malformed")
+
+        ApiManager().fetchFilms(inputJson: Constants.EMPLOYEES_MALFORMED_JSON) {
+            employee,err  in
+
+            XCTAssertEqual("error", err)
+
+            expectation.fulfill()
+
+        }
+        callWait()
+    }
+
+    func callWait()  {
+        self.waitForExpectations(timeout: 10) { (error) in
+            guard error == nil else {
+                XCTAssert(false)
+                NSLog("Timeout Error.")
+                return
+            }
+        }
+
     }
 
 }

@@ -14,6 +14,14 @@
 		823F1B8B24D0751500E2EC51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 823F1B8A24D0751500E2EC51 /* Assets.xcassets */; };
 		823F1B8E24D0751500E2EC51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823F1B8C24D0751500E2EC51 /* LaunchScreen.storyboard */; };
 		823F1B9924D0751600E2EC51 /* SquareAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F1B9824D0751600E2EC51 /* SquareAssignmentTests.swift */; };
+		823F1BA724D07E3B00E2EC51 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F1BA624D07E3B00E2EC51 /* Employee.swift */; };
+		823F1BAA24D081BB00E2EC51 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F1BA924D081BB00E2EC51 /* ApiManager.swift */; };
+		823F1BB024D08ABC00E2EC51 /* EmployeeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F1BAE24D08ABC00E2EC51 /* EmployeeTableCell.swift */; };
+		823F1BB124D08ABC00E2EC51 /* EmployeeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 823F1BAF24D08ABC00E2EC51 /* EmployeeTableCell.xib */; };
+		823F1BB324D08E1700E2EC51 /* EmployeeModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F1BB224D08E1700E2EC51 /* EmployeeModelView.swift */; };
+		823F1BB524D1B72A00E2EC51 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F1BB424D1B72900E2EC51 /* CustomImageView.swift */; };
+		823F1BB724D205EA00E2EC51 /* EmptyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F1BB624D205E900E2EC51 /* EmptyTableView.swift */; };
+		823F1BBA24D251ED00E2EC51 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823F1BB924D251ED00E2EC51 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +46,14 @@
 		823F1B9424D0751600E2EC51 /* SquareAssignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SquareAssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		823F1B9824D0751600E2EC51 /* SquareAssignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareAssignmentTests.swift; sourceTree = "<group>"; };
 		823F1B9A24D0751600E2EC51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		823F1BA624D07E3B00E2EC51 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		823F1BA924D081BB00E2EC51 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		823F1BAE24D08ABC00E2EC51 /* EmployeeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableCell.swift; sourceTree = "<group>"; };
+		823F1BAF24D08ABC00E2EC51 /* EmployeeTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeTableCell.xib; sourceTree = "<group>"; };
+		823F1BB224D08E1700E2EC51 /* EmployeeModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeModelView.swift; sourceTree = "<group>"; };
+		823F1BB424D1B72900E2EC51 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		823F1BB624D205E900E2EC51 /* EmptyTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableView.swift; sourceTree = "<group>"; };
+		823F1BB924D251ED00E2EC51 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +95,13 @@
 		823F1B8024D0750F00E2EC51 /* SquareAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				823F1BB824D251D300E2EC51 /* Helpers */,
+				823F1BA824D0818F00E2EC51 /* NetworkLayer */,
+				823F1BA524D07E1400E2EC51 /* View */,
+				823F1BA424D07E0C00E2EC51 /* ModelView */,
+				823F1BA324D07E0000E2EC51 /* Model */,
 				823F1B8124D0750F00E2EC51 /* AppDelegate.swift */,
 				823F1B8324D0750F00E2EC51 /* SceneDelegate.swift */,
-				823F1B8524D0750F00E2EC51 /* ViewController.swift */,
 				823F1B8724D0750F00E2EC51 /* Main.storyboard */,
 				823F1B8A24D0751500E2EC51 /* Assets.xcassets */,
 				823F1B8C24D0751500E2EC51 /* LaunchScreen.storyboard */,
@@ -97,6 +117,58 @@
 				823F1B9A24D0751600E2EC51 /* Info.plist */,
 			);
 			path = SquareAssignmentTests;
+			sourceTree = "<group>";
+		};
+		823F1BA324D07E0000E2EC51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				823F1BA624D07E3B00E2EC51 /* Employee.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		823F1BA424D07E0C00E2EC51 /* ModelView */ = {
+			isa = PBXGroup;
+			children = (
+				823F1BB224D08E1700E2EC51 /* EmployeeModelView.swift */,
+			);
+			path = ModelView;
+			sourceTree = "<group>";
+		};
+		823F1BA524D07E1400E2EC51 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				823F1BAB24D08A4000E2EC51 /* tableCell */,
+				823F1B8524D0750F00E2EC51 /* ViewController.swift */,
+				823F1BB424D1B72900E2EC51 /* CustomImageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		823F1BA824D0818F00E2EC51 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				823F1BA924D081BB00E2EC51 /* ApiManager.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		823F1BAB24D08A4000E2EC51 /* tableCell */ = {
+			isa = PBXGroup;
+			children = (
+				823F1BAE24D08ABC00E2EC51 /* EmployeeTableCell.swift */,
+				823F1BAF24D08ABC00E2EC51 /* EmployeeTableCell.xib */,
+				823F1BB624D205E900E2EC51 /* EmptyTableView.swift */,
+			);
+			path = tableCell;
+			sourceTree = "<group>";
+		};
+		823F1BB824D251D300E2EC51 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				823F1BB924D251ED00E2EC51 /* Constant.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +254,7 @@
 			files = (
 				823F1B8E24D0751500E2EC51 /* LaunchScreen.storyboard in Resources */,
 				823F1B8B24D0751500E2EC51 /* Assets.xcassets in Resources */,
+				823F1BB124D08ABC00E2EC51 /* EmployeeTableCell.xib in Resources */,
 				823F1B8924D0750F00E2EC51 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,6 +274,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				823F1B8624D0750F00E2EC51 /* ViewController.swift in Sources */,
+				823F1BB724D205EA00E2EC51 /* EmptyTableView.swift in Sources */,
+				823F1BB524D1B72A00E2EC51 /* CustomImageView.swift in Sources */,
+				823F1BA724D07E3B00E2EC51 /* Employee.swift in Sources */,
+				823F1BB024D08ABC00E2EC51 /* EmployeeTableCell.swift in Sources */,
+				823F1BAA24D081BB00E2EC51 /* ApiManager.swift in Sources */,
+				823F1BB324D08E1700E2EC51 /* EmployeeModelView.swift in Sources */,
+				823F1BBA24D251ED00E2EC51 /* Constant.swift in Sources */,
 				823F1B8224D0750F00E2EC51 /* AppDelegate.swift in Sources */,
 				823F1B8424D0750F00E2EC51 /* SceneDelegate.swift in Sources */,
 			);
@@ -248,6 +328,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -308,6 +389,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
