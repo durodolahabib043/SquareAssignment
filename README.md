@@ -10,7 +10,7 @@ This app uses the MVVM architecture
 3. Model - consist of employee class
 
 Also there are helper and ApiManager class. These are used for dependency injections 
-The MVVM is main to de-couple classes for test.
+The MVVM is used mainly to de-couple classes for unit-test.
 
 ## App Demo
 This app has a picker and a tableview. Picker is used to switch between the 3 different apis, 
@@ -21,7 +21,7 @@ the tableview inturn respond to it
   2. This app was tested with iphone x , version 12.1 (16B92)
  
 ## Your Focus Areas.
-As stated above, i focused more on Architecture
+As stated above, i focused more on Architecture (MVVM) and unit-test
 
 ## Copied-in code or copied-in dependencies.
 1. CustomImageView - used for cacheing imageview
@@ -32,10 +32,6 @@ As stated above, i focused more on Architecture
 
 ## How long you spent on the project.
 This project took about 5hrs 
-
-## 
-
-
 
 ## Unit Test
 The app has a unit test section where the 3 api responses are been tested 
